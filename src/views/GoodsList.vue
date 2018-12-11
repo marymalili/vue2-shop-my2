@@ -8,11 +8,17 @@
           <span class="sortby">排序:</span>
           <a href="javascript:void(0)" class="default cur">默认</a>
           <a href="javascript:void(0)" class="price">价格 <svg class="icon icon-arrow-short"><use xlink:href="#icon-arrow-short"></use></svg></a>
-          <a href="javascript:void(0)" class="filterby">筛选</a>
+          <a href="javascript:void(0)" class="filterby"
+            @click.stop = "showFilerPop"
+          >
+            筛选
+          </a>
         </div>
         <div class="accessory-result">
           <!-- filter -->
-          <div class="filter" id="filter">
+          <div class="filter" id="filter"
+            v-bind:class="{'filterby-show':filterBy}"
+          >
             <dl class="filter-price">
               <dt>价格区间:</dt>
               <dd><a href="javascript:void(0)" @click="setPriceFilter('all')" v-bind:class="{'cur':priceChecked=='all'}">选择价格</a>
@@ -90,7 +96,8 @@
             endPrice:'6000.00'
           }
         ],
-        priceChecked:'all'
+        priceChecked:'all',
+        filterBy:false
       }
     },
     mounted(){
@@ -111,6 +118,10 @@
       setPriceFilter(index){
         this.priceChecked = index;
         console.log("index",index)
+      },
+      showFilerPop(){
+        console.log(111)
+        this.filterBy = true;
       }
     }
   }
