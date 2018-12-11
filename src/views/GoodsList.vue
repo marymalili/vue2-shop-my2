@@ -51,6 +51,8 @@
         </div>
       </div>
     </div>
+    <!--遮罩层-->
+    <div class="md-overlay" v-show="overLayFlag" @click.stop="closePop"></div>
     <nav-footer></nav-footer>
 
   </div>
@@ -97,7 +99,8 @@
           }
         ],
         priceChecked:'all',
-        filterBy:false
+        filterBy:false,
+        overLayFlag:false//弹框默认状态
       }
     },
     mounted(){
@@ -122,6 +125,11 @@
       showFilerPop(){
         console.log(111)
         this.filterBy = true;
+        this.overLayFlag = true
+      },
+      closePop(){
+        this.filterBy = false;
+        this.overLayFlag = false
       }
     }
   }
