@@ -76,8 +76,8 @@
     methods: {
       getGoodList(){
         axios.get('http://localhost:3000/hello').then((result)=>{
-          console.log(result)
-          this.goodsList = result.data;
+          var res = result.data
+          this.goodsList = res.result;
         })
       }
     }
