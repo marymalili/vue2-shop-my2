@@ -35,7 +35,7 @@
               <ul>
                 <li v-for="item in goodsList">
                   <div class="pic">
-                    <a href="#"><img v-bind:src="'/static/'+item.productImage" alt=""></a>
+                    <a href="#"><img v-lazy="'/static/'+item.productImage" alt=""></a>
                   </div>
                   <div class="main">
                     <div class="name">{{item.productName}}</div>
@@ -66,6 +66,7 @@
   import NavFooter from './../components/NavFooter.vue';
   import NavBreader from './../components/NavBreader.vue';
   import axios from 'axios';
+
 
   export default {
     name: "GoodsList",

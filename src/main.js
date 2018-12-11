@@ -3,6 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueLayLoad from 'vue-lazyload'
+
+/* 中间件*/
+Vue.use(VueLayLoad,{
+  loading: 'static/loading-svg/loading-bars.svg',
+  try:3
+})
 
 Vue.config.productionTip = false
 
