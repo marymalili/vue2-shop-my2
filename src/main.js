@@ -8,7 +8,7 @@ import VueLayLoad from 'vue-lazyload'
 /* 中间件*/
 Vue.use(VueLayLoad,{
   loading: 'static/loading-svg/loading-bars.svg',
-  try:3
+  attempt:3
 })
 
 Vue.config.productionTip = false
